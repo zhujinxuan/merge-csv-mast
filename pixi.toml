@@ -1,0 +1,14 @@
+[project]
+authors = ["Jinxuan Zhu <zhujinxuan@gmail.com>"]
+channels = ["conda-forge"]
+description = "A script to merge multiple CSV files based on timestamp, managed with Pixi"
+name = "merge_csv_script"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = ">=3.13.0,<3.14"
+pandas = ">=2.2.3,<3"
+pyyaml = ">=6.0.2,<7"
