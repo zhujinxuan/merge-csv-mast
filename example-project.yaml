@@ -1,0 +1,9 @@
+input_folder: "D:/projects/gangbei-erqi/20231025-20240124/"
+output_file: "D:/projects/gangbei-erqi/csv-merged/20231025-20240124.csv"
+lines_to_skip: 2
+timestamp_column: "DateTime"
+timestamp_format: "%Y/%m/%d %H:%M"
+date_column: "Date"
+date_format: "%Y/%m/%d"
+time_column: "Time"
+time_format: "%H:%M"

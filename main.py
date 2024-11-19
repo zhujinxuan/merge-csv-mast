@@ -1,3 +1,4 @@
+
 import os
 import pandas as pd
 import yaml
@@ -41,10 +42,10 @@ for file in csv_files:
         df[timestamp_column] = pd.to_datetime(
             df[date_column] + ' ' + df[time_column], 
             format=f"{date_format} {time_format}"
-        )
+        ).dt.strftime(timestamp_format)
         df.drop(columns=[date_column, time_column], inplace=True)
     elif timestamp_column in df.columns and timestamp_format:
-        df[timestamp_column] = pd.to_datetime(df[timestamp_column], format=timestamp_format)
+        df[timestamp_column] = pd.to_datetime(df[timestamp_column], format=timestamp_format).dt.strftime(timestamp_format)
     else:
         raise ValueError("CSV file does not have the necessary date/time or timestamp columns.")
     
