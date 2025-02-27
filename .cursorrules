@@ -1,0 +1,182 @@
+;; Cursor Rules for Python Data Analysis
+;; Combining Pythonic principles with practical data manipulation
+;; Inspired by Python's data science ecosystem and best practices
+
+(define-cursor-rules
+  ;; Core Philosophy
+  (philosophy
+    (principles
+      (type-hints "Use type hints for better code understanding")
+      (data-transformation "Focus on pandas operations and method chaining")
+      (immutability "Prefer immutable operations when possible")
+      (functional-style "Use functional operations where appropriate")
+      (vectorization "Leverage NumPy/Pandas vectorization")
+      (reproducibility "Ensure analysis workflows are reproducible")))
+
+  ;; Data Analysis Foundations
+  (data-analysis
+    (dependencies
+      (pandas "Primary data manipulation library")
+      (numpy "Numerical computing foundation")
+      (scipy "Scientific computing operations")
+      (statsmodels "Statistical modeling and testing")
+      (matplotlib "Base plotting library")
+      (seaborn "Statistical data visualization")
+      (scikit-learn "Machine learning and analysis")
+      (pingouin "Statistical testing"))
+    
+    (conventions
+      (method-chaining "Use method chaining with pandas operations")
+      (views "Use .loc/.iloc for explicit indexing")
+      (grouping "Use groupby for data aggregation")
+      (vectorization "Use vectorized operations over loops")))
+
+  ;; Function Design
+  (functions
+    (rules
+      (small-functions "Keep functions under 30 lines")
+      (single-responsibility "Follow single responsibility principle")
+      (pure-functions "Prefer pure functions where possible")
+      (type-hints "Use type hints for function signatures")
+      (docstrings "Use Google-style docstrings")))
+
+  ;; Data Transformation
+  (transformations
+    (prefer
+      (apply "Use df.apply for row/column operations")
+      (query "Use df.query for filtering operations")
+      (agg "Use agg for aggregation operations")
+      (vectorized-ops "Use vectorized operations")
+      (list-comprehension "Use comprehensions for clarity"))
+    (mutation-strategy
+      (scope-rules
+        "Use inplace=True explicitly when needed"
+        "Create copies with .copy() before mutations"
+        "Document mutation behavior in docstrings"
+        "Prefer method chaining for transformations")
+      (performance-rules
+        "Use inplace operations for large DataFrames locally"
+        "Leverage pandas optimized operations"
+        "Use views when possible with .loc/.iloc")
+      (safety-rules
+        "Avoid modifying original DataFrames"
+        "Return new DataFrames explicitly"
+        "Use context managers for temporary operations")))
+
+  ;; Visualization
+  (visualization
+    (rules
+      (plotting-library
+        "Use seaborn for statistical visualizations"
+        "Use plotly for interactive visualizations"
+        "Fall back to matplotlib for custom plots")
+      (plot-elements
+        "Include clear titles, labels, and legends"
+        "Use seaborn color palettes"
+        "Set style with sns.set_theme()"
+        "Use plt.subplots for complex layouts")
+      (composable-plots
+        "Create reusable plotting functions"
+        "Use FacetGrid for multi-plot layouts"
+        "Implement custom plotting utilities")))
+
+  ;; Jupyter Notebook Practices
+  (notebook-practices
+    (rules
+      (organization
+        "Use markdown cells for documentation"
+        "Keep code cells focused and modular"
+        "Use %run for importing local modules")
+      (reproducibility
+        "Use requirements.txt or environment.yml"
+        "Include data loading steps"
+        "Consider papermill for parameterization")))
+
+  ;; Performance Optimization
+  (performance
+    (rules
+      (vectorization "Use NumPy/Pandas vectorized operations")
+      (chunking "Use chunksize for large data operations")
+      (type-efficiency "Use appropriate dtypes")
+      (parallel "Use dask for parallel operations")
+      (large-data "Consider vaex or dask for big data")))
+
+  ;; Error Handling
+  (error-handling
+    (rules
+      (type-checking "Use type hints and runtime checks")
+      (null-handling "Handle NaN/None explicitly")
+      (exceptions "Use appropriate exception types")
+      (assertions "Use assert for development checks")
+      (logging "Use logging module for errors")))
+
+  ;; Code Organization
+  (organization
+    (rules
+      (file-structure
+        "Use src/ directory for package code"
+        "Group related functionality in modules"
+        "Create __init__.py files appropriately")
+      (module-structure
+        "Follow PEP 8 guidelines"
+        "Use if __name__ == '__main__' idiom")
+      (naming-conventions
+        "Follow PEP 8 naming conventions"
+        "Use meaningful variable names")
+      (documentation
+        "Document data sources and assumptions"
+        "Use type hints and docstrings")))
+
+  ;; Statistical Modeling
+  (statistical-modeling
+    (rules
+      (model-specification
+        "Use statsmodels formulas"
+        "Handle categorical variables appropriately"
+        "Select appropriate model families")
+      (model-diagnostics
+        "Check model assumptions"
+        "Use diagnostic plots"
+        "Analyze residuals")
+      (model-selection
+        "Use AIC/BIC metrics"
+        "Implement cross-validation"
+        "Consider stepwise selection"))
+    (best-practices
+      (documentation
+        "Document model assumptions"
+        "Report coefficient interpretations"
+        "Include confidence intervals")
+      (validation
+        "Check for multicollinearity"
+        "Use train-test splits"
+        "Report appropriate metrics")))
+
+  ;; Data Science Workflow
+  (workflow
+    (steps
+      (exploration
+        "Use df.info() and df.describe()"
+        "Check data types and missing values"
+        "Create initial visualizations")
+      (cleaning
+        "Handle missing data appropriately"
+        "Convert data types as needed"
+        "Handle outliers")
+      (analysis
+        "Use appropriate statistical methods"
+        "Document assumptions"
+        "Create reproducible pipelines")
+      (visualization
+        "Create informative visualizations"
+        "Use appropriate plot types"
+        "Ensure publication quality")))
+
+  ;; Code Generation Preferences
+  (generation
+    (preferences
+      (pandas-operations "Suggest method chaining")
+      (type-safety "Include type hints")
+      (documentation "Generate docstrings")
+      (vectorization "Prefer vectorized operations")
+      (plotting "Include complete plot specifications"))))
